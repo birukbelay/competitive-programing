@@ -31,7 +31,7 @@ print(kClosest([[3,3],[5,-1],[-2,4]], 2))
 
 def kClosest2( points, k):
     print("==>",points)
-    points.sort(key=lambda p: p[0]**2 + p[1]**2 )
+    points.sort(key=lambda p: p[0]**2 + p[1]**2)
     print(points)
     return points[:k]
 

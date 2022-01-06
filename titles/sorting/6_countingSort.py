@@ -9,3 +9,4 @@ def countingSort(arr):
 
 
 print(countingSort([2,1,9,3,3,4,5,6]))
+

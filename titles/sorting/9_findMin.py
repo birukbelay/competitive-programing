@@ -8,7 +8,7 @@ def smallest_num(nums):
             if nums[j]< nums[i]:
                 cnt=cnt+1
         arr[i]=cnt
-        print("a->", arr)
+        # print("a->", arr)
     return arr
         
 print(smallest_num([7,7,7,7]))

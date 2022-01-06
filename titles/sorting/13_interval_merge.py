@@ -1,18 +1,18 @@
 def merge(intervals):
-    
     intervals.sort(key=lambda p: p[0])
     first= intervals[0][0]
     last = intervals[0][1]
-    arr=[]
-    
-    
+    arr=[]   
     for i in range(len(intervals)):
         if intervals[i][0]<= last:
-            last= intervals[i][1]
+            if last < intervals[i][1]:
+                last= intervals[i][1]
         else:
             arr.append([first,last])
             first=intervals[i][0]
-            last= intervals[i][1]
+            if last < intervals[i][1]:
+                last= intervals[i][1]
+            
         print("i", i)
         print("int", intervals)
         print("arr", arr)
