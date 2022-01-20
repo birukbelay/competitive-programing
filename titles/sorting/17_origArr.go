@@ -11,15 +11,15 @@ func findOriginalArray(changed []int) {
 	// m := make(map[int]int)
 	// arr:=[]int{}
 
-	// for i, v := range a {
-	// 	pos := sort.SearchInts(a, v*2)
-	// 	_, ok:=m[i*2];
-	// 	_, ok2:=m[i]
-	// 	if !ok && !ok2{
-	// 		m[i]=1
-	// 		m[pos]=1
-	// 		arr=append(arr, v)
-	// 	}
+	for i, v := range a {
+		pos := sort.SearchInts(a, v*2)
+		_, ok:=m[i*2];
+		_, ok2:=m[i]
+		if !ok && !ok2{
+			m[i]=1
+			m[pos]=1
+			arr=append(arr, v)
+		}
 		
 
 	// }

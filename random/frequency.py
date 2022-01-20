@@ -5,8 +5,7 @@ def frequency(n, c):
         val=n%10
         n=n//10
         if val==c:
-            count=count+1 
-    print(count)
+            count=count+1   
     return count
 
 frequency(33344563, 3)
