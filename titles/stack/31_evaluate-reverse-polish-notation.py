@@ -1,11 +1,26 @@
 # https://leetcode.com/problems/evaluate-reverse-polish-notation/
 
+
+    
+    
+import re
+
+
 def evalRPN(tokens: list[str]) -> int:
         stack=[]
+        symbols={"+":1, "-":1,"*":1,"/":1}
         
+        def cal(val):
+            v1, v2=stack.pop(), stack.pop()
+            if val == "+": return v2+v1
+            elif val=="-": return v2-v1
+            elif val=="*": return v2 *v1
+            elif val=="/": return int(v2/v1)
         
         for i in tokens:
             print(stack)
+            if i in symbols:
+                stack.append(cal(i))
             if i == "+":
                 first=stack.pop()
                 second=stack.pop()
@@ -24,7 +39,7 @@ def evalRPN(tokens: list[str]) -> int:
                 if abs(second)<abs(first):
                     stack.append(0)
                 else:
-                    stack.append(second//first) 
+                    stack.append(int(second/first)) 
             else:
                 stack.append(int(i))
         return stack[0]
