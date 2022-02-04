@@ -27,7 +27,7 @@ def isValid( s: str) -> bool:
             except:
                 return False
                 
-            
+
     if len(stack)==0:
         return True
     else:

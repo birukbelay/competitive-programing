@@ -21,25 +21,25 @@ def evalRPN(tokens: list[str]) -> int:
             print(stack)
             if i in symbols:
                 stack.append(cal(i))
-            if i == "+":
-                first=stack.pop()
-                second=stack.pop()
-                stack.append(first+second)
-            elif i=="-":
-                first=stack.pop()
-                second=stack.pop()
-                stack.append(second-first)
-            elif i=="*":
-                first=stack.pop()
-                second=stack.pop()
-                stack.append(second*first)
-            elif i=="/":
-                first=stack.pop()
-                second=stack.pop()
-                if abs(second)<abs(first):
-                    stack.append(0)
-                else:
-                    stack.append(int(second/first)) 
+        #     if i == "+":
+        #         first=stack.pop()
+        #         second=stack.pop()
+        #         stack.append(first+second)
+        #     elif i=="-":
+        #         first=stack.pop()
+        #         second=stack.pop()
+        #         stack.append(second-first)
+        #     elif i=="*":
+        #         first=stack.pop()
+        #         second=stack.pop()
+        #         stack.append(second*first)
+        #     elif i=="/":
+        #         first=stack.pop()
+        #         second=stack.pop()
+        #         if abs(second)<abs(first):
+        #             stack.append(0)
+        #         else:
+        #             stack.append(int(second/first)) 
             else:
                 stack.append(int(i))
         return stack[0]

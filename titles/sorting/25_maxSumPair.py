@@ -1,5 +1,5 @@
 
-from copyreg import constructor
+
 
 
 def minPairSum(nums: list[int]) -> int:
