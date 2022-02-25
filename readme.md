@@ -12,4 +12,4 @@ titles
 - recursion
 - two pointers
 - heaps
-- binary 
+- binary search
