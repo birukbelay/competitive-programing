@@ -1,4 +1,46 @@
+# https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/submissions/
 import sys
+from collections import deque
+ 
+
+# Using heap
+def shortestSubarray( nums: list[int], k: int) -> int:
+    # Initializing a queue
+    q = deque()
+    prifix_sum=[0]
+    # creating a prifix sum
+    for i in nums:
+        prifix_sum.append(prifix_sum[-1]+i)
+    gap=sys.maxsize
+    for i in range(len(prifix_sum)):
+
+        # minimize the gap by checking it with the initial of the queue 
+        # and removing from the queue while it is greater than k
+        while q and prifix_sum[i] -prifix_sum[q[0]]>= k:
+
+            gap=min(gap,i-q[0])            
+            q.popleft()
+        # checking for negative numbers 
+        while q and prifix_sum[i]< prifix_sum[q[-1]]:
+            q.pop()
+        q.append(i)
+    
+    return gap if gap < sys.maxsize else -1
+            
+            
+            
+        
+        
+        
+
+
+
+
+
+
+
+
+#  using while Loop //#TODO not done
 class Solution:
     def shortestSubarray(self, nums: list[int], k: int) -> int:        
         left=0
@@ -28,12 +70,13 @@ class Solution:
             return -1
         else:
             return smallestCtr
-            
-        
-        
+                         
 sub=Solution()
 # sub.shortestSubarray([84,-37,32,40,95], 167)
-def shortestSubarray( nums: list[int], k: int) -> int:    
+
+
+# using For loop, TLE ERROR
+def shortestSubarray1( nums: list[int], k: int) -> int:    
     sum=0
     curCtr=0
     smallestCtr=sys.maxsize 
@@ -57,6 +100,6 @@ def shortestSubarray( nums: list[int], k: int) -> int:
         return -1
     else:
         return smallestCtr
-shortestSubarray([84,-37,32,40,95], 167)               
+# shortestSubarray1([84,-37,32,40,95], 167)               
                 
            
