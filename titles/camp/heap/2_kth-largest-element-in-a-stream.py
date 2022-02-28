@@ -1,10 +1,12 @@
 # https://leetcode.com/problems/kth-largest-element-in-a-stream/
-import heapq
 
+
+import heapq
 class KthLargest:
-    nums=[0]
+    nums=[]
     def __init__(self, k: int, nums: List[int]):
         self.nums=nums
+        self.k=k
         heapq.heapify(self.nums)
         for i in range(len(nums)-k):
             heapq.heappop(self.nums)
@@ -12,7 +14,8 @@ class KthLargest:
 
     def add(self, val: int) -> int:
         heapq.heappush(self.nums, val)
-        heapq.heappop(self.nums)
+        if len(self.nums)>self.k:
+            heapq.heappop(self.nums)
         if len(self.nums)>0:
             print(self.nums[0])
             return self.nums[0]

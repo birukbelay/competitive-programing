@@ -51,7 +51,7 @@ class MyCircularDeques:
     
     
     
-myCircularDeque =  MyCircularDeques(3);
+myCircularDeque =  MyCircularDeques(3)
 myCircularDeque.insertLast(1);  #// return True
 myCircularDeque.insertLast(2);  #// return True
 myCircularDeque.insertFront(3); #// return True
@@ -60,4 +60,4 @@ myCircularDeque.getRear();      #// return 2
 myCircularDeque.isFull();       #// return True
 myCircularDeque.deleteLast();   #// return True
 myCircularDeque.insertFront(4); #// return True
-myCircularDeque.getFront();
+myCircularDeque.getFront()

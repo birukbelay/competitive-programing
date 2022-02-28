@@ -2,11 +2,11 @@
 import heapq
 
 def heapOpration():
-    input1 = int(input("query"))
+    input1 = int(input(""))
     arr=[]
     ctr=0
     while ctr<input1:
-        input2= input("query")
+        input2= input("")
         val=input2.split()
         
         if val[0]=="1":
