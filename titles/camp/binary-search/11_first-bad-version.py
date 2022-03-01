@@ -6,8 +6,8 @@ class Solution:
         left=0
         right=n
         while left<=right:
-            middle=(left+right)//2
-            print("mid=",middle)
+            middle=left+ (right-left)//2
+            
             if isBadVersion(middle):
                 print(f"badm={middle}")                
                 right=middle-1

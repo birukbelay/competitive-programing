@@ -3,7 +3,7 @@
 def sushi(n,v):
     eel=0
     tuna=0
-    cur=
+    cur=2
     for i in range(n):
         if v[i]==2:
             eel+=1
