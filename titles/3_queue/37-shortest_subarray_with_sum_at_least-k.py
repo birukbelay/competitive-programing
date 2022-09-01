@@ -3,20 +3,21 @@ import sys
 from collections import deque
  
 
-# Using heap
+# Using queue
 def shortestSubarray( nums: list[int], k: int) -> int:
     # Initializing a queue
     q = deque()
-    prifix_sum=[0]
+    
     # creating a prifix sum
+    prifix_sum=[0]    
     for i in nums:
         prifix_sum.append(prifix_sum[-1]+i)
+    # gap holds the biggest lenth
     gap=sys.maxsize
     for i in range(len(prifix_sum)):
-
         # minimize the gap by checking it with the initial of the queue 
         # and removing from the queue while it is greater than k
-        while q and prifix_sum[i] -prifix_sum[q[0]]>= k:
+        while q and prifix_sum[i] - prifix_sum[q[0]]>= k:
 
             gap=min(gap,i-q[0])            
             q.popleft()

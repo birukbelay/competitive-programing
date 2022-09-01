@@ -14,5 +14,5 @@ def nextGreaterElement(nums1: list[int], nums2: list[int]) -> list[int]:
         else:
             nxtElements.append(-1)
     return nxtElements    
-0
+
          

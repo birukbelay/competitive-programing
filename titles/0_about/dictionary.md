@@ -47,3 +47,20 @@ dog
 del a_dict[color]
 
 ```
+
+
+## sort a dictionary
+
+
+```python
+
+d = {2:3, 1:89, 4:5, 3:0}
+a=sorted(d.items())
+print(a)
+>> [(1, 89), (2, 3), (3, 0), (4, 5)] #this is a list
+sd=dict(sorted(d.items()))
+print(sd)
+>> {1: 89, 2: 3, 3: 0, 4: 5} #this is a dictrionary
+for k,v in sd:
+     print( k, v)
+```

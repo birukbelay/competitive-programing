@@ -1,4 +1,34 @@
 
+def findOrignalArrFinal(changed):
+    dict={}
+    arr=[]
+    changed.sort()
+    for i in range(len(changed)):
+        if changed[i] in dict:
+            dict[changed[i]]=dict[changed[i]]+1
+        else:
+            dict[changed[i]]=1
+    print("dict=",dict)
+    for j in range(len(changed)):
+        
+        cur_key=changed[j]
+        cur_VAL = dict[cur_key]       
+        # needed=dict[cur_VAL*2]
+         
+        print("cur_Val=", cur_VAL,"curKey", cur_key)          
+        if cur_VAL>0 and  cur_key*2 in dict and dict[cur_key*2]>0:
+            # print("cur_Val=", cur_VAL,"dict[cur=", dict[cur_VAL*2])          
+            
+            dict[cur_key]=dict[cur_key]-1
+            dict[cur_key*2]=dict[cur_key*2]-1
+            if not dict[cur_key]  <0:                
+                arr.append(cur_key)
+    if len(arr)==len(changed)/2:
+        return arr
+    else:
+        return []  
+
+
 def findOriginalArrTry1(changed: list[int]) -> list[int]:
         changed.sort()
         num_dict=dict.fromkeys(changed, 0)
@@ -108,34 +138,7 @@ def findOrignalOptTry4(changed):
     else:
         return []
     
-def findOrignalArrFinal(changed):
-    dict={}
-    arr=[]
-    changed.sort()
-    for i in range(len(changed)):
-        if changed[i] in dict:
-            dict[changed[i]]=dict[changed[i]]+1
-        else:
-            dict[changed[i]]=1
-    print("dict=",dict)
-    for j in range(len(changed)):
         
-        cur_key=changed[j]
-        cur_VAL = dict[cur_key]       
-        # needed=dict[cur_VAL*2]
-         
-        print("cur_Val=", cur_VAL,"curKey", cur_key)          
-        if cur_VAL>0 and  cur_key*2 in dict and dict[cur_key*2]>0:
-            # print("cur_Val=", cur_VAL,"dict[cur=", dict[cur_VAL*2])          
-            
-            dict[cur_key]=dict[cur_key]-1
-            dict[cur_key*2]=dict[cur_key*2]-1
-            if not dict[cur_key]  <0:                
-                arr.append(cur_key)
-    if len(arr)==len(changed)/2:
-        return arr
-    else:
-        return []          
             
             
     # print(dict)
