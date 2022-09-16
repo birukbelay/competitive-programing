@@ -104,11 +104,11 @@ def carFleet(target: int, position: list[int], speed: list[int]) -> int:
     PositionTimePair=[[pos,time] for pos,time in zip(position, times)]
     PositionTimePair.sort(reverse=True) 
     print(PositionTimePair)
-    st=[0] 
+    flt=[0] 
     for p,t in PositionTimePair:
-        if st[-1]<t:
-            st.append(t)    
-    return len(st)-1
+        if flt[-1]<t:
+            flt.append(t)    
+    return len(flt)-1
 
 # test(carFleet())
 test(carFleet(13,[10,2,5,7,4,6,11], [7,5,10,5,9,4,1]), 2)

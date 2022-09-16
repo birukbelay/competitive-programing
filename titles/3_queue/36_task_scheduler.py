@@ -24,19 +24,23 @@ def leastInterval(self, tasks: List[str], n: int) -> int:
     return time
 
 def leastIntervalDict(self, tasks: List[str], n: int) -> int:
-    dict={}
+    dicn={}
+    # lenDict=0
     for task in tasks:        
-        if task in dict:
-            dict[task]=dict[task]+1
+        if task in dicn:
+            dicn[task]=dicn[task]+1
         else:
-           dict[task]=1
-    sortedDict=dict(sorted(dict.items(), key=lambda item: item[1], reverse=True))
+            lenDict+=1
+            dicn[task]=1
+    sortedDict=dict(sorted(dicn.items(), key=lambda item: item[1], reverse=True))
     # maxHeap=[-cnt for cnt in dict.values()]
     # heapq.heapify(maxHeap)
     time=0
     q=deque()
+    i=0    
     while sortedDict or q:
         time +=1
+        lenDict=len(dicn)
         if sortedDict:
             cnt=1+heapq.heappop(maxHeap)
             if cnt:

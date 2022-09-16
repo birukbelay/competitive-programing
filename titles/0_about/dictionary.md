@@ -1,6 +1,11 @@
 
 
-- iterate over keys in dictionary
+
+## Find length of a dictionary
+> len(dict)
+
+
+##iterate over keys in dictionary
   
 ```python
 
@@ -35,12 +40,9 @@ pet
 blue
 apple
 dog
-
-
-
 ```
 
-- delete value from a dictionary
+  ## delete value from a dictionary
 
 ```python
 # delete an item from a dictionary
@@ -50,8 +52,6 @@ del a_dict[color]
 
 
 ## sort a dictionary
-
-
 ```python
 
 d = {2:3, 1:89, 4:5, 3:0}
@@ -64,3 +64,10 @@ print(sd)
 for k,v in sd:
      print( k, v)
 ```
+> sorting by values
+```python
+a=dict(sorted(x.items(), key=lambda item: item[1]))
+# Reversed
+ a=dict(sorted(x.items(), key=lambda item: item[1], reverse=True))
+```
+ 
