@@ -8,7 +8,7 @@ def maxFrequency(nums, k):
     maxLen=0
     print("nums==",nums)
     while l<=r and r<numLen:
-        # print("l-",l,'$l', "r-",r)
+        # this is the length 
         winLength=r-l+1
         # print(f'l-{l},{nums[l]} -- r{r},{nums[r]} --winL={winLength}-- totS={totalSum}')
         # if windows tot sum is greater than sum of nums + k

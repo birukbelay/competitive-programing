@@ -17,3 +17,5 @@ import sys
     a[:-2]   # everything except the last two items
 ```
 
+- **array stringfy**
+
