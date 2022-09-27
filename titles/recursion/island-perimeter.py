@@ -11,19 +11,23 @@ class Solution:
             side = count = 0
             for dr, dc in directions:
                 nrow , ncol = row + dr, col + dc
+                # for adding the perimetrs of this cell
                 # if it is out of Boundary) or if it is a water add one to the perimenter
                 if not in_bound(nrow, ncol) or grid[nrow][ncol] == 0:
                     side += 1
                     continue
 
                 new_state = State(nrow, ncol)
+                # if the direction have not been traveled
                 if new_state not in  seen:
                     seen.add(new_state)
                     count += dfs(nrow, ncol)
             return side + count
-
+        
+        # find one cell which is island
         for row in range(n):
             for col in range(m):
+                # Find an island & is not in seen
                 if grid[row][col] == 1 and (row, col) not in seen:
                     seen.add(State(row, col))
                     return dfs(row, col)
