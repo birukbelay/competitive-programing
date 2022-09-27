@@ -1,3 +1,5 @@
+# Fast/Slow
+# https://leetcode.com/problems/minimum-window-substring/
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         reqD={}
@@ -12,11 +14,10 @@ class Solution:
                 reqD[i]+=1
             else:
                 reqD[i]=1
-        for r in range(len(s)):
-            
+        for r in range(len(s)):            
             i=s[r]
             # print("-",r)
-            if i in reqD:                  
+            if i in reqD:            
                 
                 # print(">>>r-",r,i,"l-",l,s[l])
                 # print("dctr-", dctr, "dreq-", reqD)

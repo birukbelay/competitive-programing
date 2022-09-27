@@ -3,7 +3,16 @@
 
 ## Find length of a dictionary
 > len(dict)
+  ## delete value from a dictionary
 
+```python
+# delete an item from a dictionary -- if no value Raises error
+del a_dict[color]
+
+# this will not raise an error if element not found 
+a_dict.pop(color, None)
+
+```
 
 ##iterate over keys in dictionary
   
@@ -42,13 +51,7 @@ apple
 dog
 ```
 
-  ## delete value from a dictionary
 
-```python
-# delete an item from a dictionary
-del a_dict[color]
-
-```
 
 
 ## sort a dictionary
