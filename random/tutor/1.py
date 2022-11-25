@@ -1,4 +1,4 @@
-from email.policy import strict
+
 
 
 def output1():
