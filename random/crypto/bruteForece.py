@@ -20,5 +20,5 @@ def CesarsValue(c, key):
     return chr(97+val)
 
 
-
-decrypt("bcde")
+print(ord("a"))
+# decrypt("bcde")

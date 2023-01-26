@@ -2,7 +2,7 @@
 
 
 ## Find length of a dictionary
-> len(dict)
+>  len(dict)
   ## delete value from a dictionary
 
 ```python
@@ -14,7 +14,7 @@ a_dict.pop(color, None)
 
 ```
 
-##iterate over keys in dictionary
+## iterate over keys in dictionary
   
 ```python
 
