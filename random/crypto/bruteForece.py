@@ -12,13 +12,12 @@ def decrypt(text):
 
 # find encrypted value of char
 def CesarsValue(c, key):    
+    # val = chr( (ord(c) +key)%97 )
 
-    val = (ord(c)-97 +key)%26    
-
-    # val = chr( (ord(c) +key)%97 )    
-
+    val = (ord(c)-97 +key)%26
     return chr(97+val)
 
-
-print(ord("a"))
+print(CesarsValue("a", 0))
+# print(ord("a"))
 # decrypt("bcde")
+print(chr(97+25))

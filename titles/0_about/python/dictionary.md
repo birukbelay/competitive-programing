@@ -69,8 +69,8 @@ for k,v in sd:
 ```
 > sorting by values
 ```python
-a=dict(sorted(x.items(), key=lambda item: item[1]))
+a=dict(sorted(d.items(), key=lambda item: item[1]))
 # Reversed
- a=dict(sorted(x.items(), key=lambda item: item[1], reverse=True))
+ a=dict(sorted(d.items(), key=lambda item: item[1], reverse=True))
 ```
  

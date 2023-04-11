@@ -13,6 +13,7 @@ import sys
     a[-2:]   # last two items in the array
     a[:stop]       # items from the beginning through stop-1
     a[:-2]   # everything except the last two items
+    for i in range(N, -1, -1)
 ```
 
 - **array stringfy**

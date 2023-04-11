@@ -4,13 +4,13 @@ def atbash(str):
     d={}
     key=25    
     for i in range(25):              
-        d[chr(i+97)]=chr(key+97)
+        d[chr(i+65)]=chr(key+65)
         key-=1    
-    
+    print(d)
     newStr=''    
     for i in str:
         newStr+=d[i]        
     return newStr
 
-print(atbash("abc"))
+print(atbash("ABC"))
         
