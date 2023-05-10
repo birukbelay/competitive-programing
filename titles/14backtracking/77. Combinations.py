@@ -12,10 +12,13 @@ class Solution:
                 allComb.append(comb[:])
                 return
             for i in range(start, n+1):
-                comb.append(i)
+                # decision to add a number into the combination
+                comb.append(i)                           
                 backtrack(i+1, comb)
+                # decide to remove a num from the combination     
                 comb.pop()
         backtrack(1, [])
         return allComb
+            
             
 
