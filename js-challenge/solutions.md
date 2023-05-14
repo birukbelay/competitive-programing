@@ -70,3 +70,30 @@ var reduce = function(arr, fn, initialVal) {
 
 
 ```
+
+# day 7
+[2629. Function Composition](https://leetcode.com/problems/function-composition/submissions/)
+```Typescript
+
+type F = (x: number) => number;
+
+function compose(functions: F[]): F {
+	return function(x) {
+        for (let i = functions.length - 1; i >= 0; i--) {
+          const func = functions[i];
+          x=func(x)
+        }
+        return x
+    }
+};
+
+
+```
+
+# day 7
+
+[2666. Allow One Function Call](https://leetcode.com/problems/allow-one-function-call/)
+
+```Typescript
+
+```
