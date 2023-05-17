@@ -1,4 +1,15 @@
 
+```ts
+// For...in Loop
+// For i  in gives an index of the array
+const newArr: number[] = new Array(arr.length);
+for (const i in arr) {
+    newArr[i] = fn(arr[i], Number(i));
+}y
+
+```
+
+
 > iterating in reverse
 ```Typescript
 
