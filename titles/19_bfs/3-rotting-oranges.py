@@ -6,13 +6,13 @@ class Solution:
         in_bound=lambda row, col:0<=row<n and 0<=col<m
         DIR=[[0,1],[1,0],[-1,0], [0,-1]]
         
-        visited=set()
+        # visited=set()
 #         help us iterate the grids in order
 
         minuteCtr=0
         
         rottenQueue=deque()
-        freshQueue=deque()
+        # freshQueue=deque()
         freshCtr=0
     
         #         finding all the rotten and fresh tomatoes
@@ -24,17 +24,17 @@ class Solution:
                     freshCtr+=1                                        
 
         while rottenQueue:
-            current=rottenQueue.popleft()
-            for i in DIR:
-                ptx=current[0] + i[0]
-                pty=current[1] +i[1]
-                minute=current[2]
+            cur=rottenQueue.popleft()
+            for i, j in DIR:
+                ptx=cur[0] + i
+                pty=cur[1] +j
+                # minute=current[2]
                 
-                minuteCtr=max(minute, minuteCtr)
+                minuteCtr=max(cur[2], minuteCtr)
                 
-                if in_bound(ptx, pty) and (ptx, pty) and grid[ptx][pty]==1:
-                    grid[ptx][pty]=2 #to mark the visited cells
-                    rottenQueue.append((ptx,pty,minute+1))
+                if in_bound(cur[0]+i, cur[1]+j) and grid[ptx][pty]==1:
+                    grid[ptx][pty]=2 #to mark the visited cells so no need for visited set
+                    rottenQueue.append((ptx,pty,cur[2]+1))
                     # print( minute)
                     
                     print(freshCtr)
