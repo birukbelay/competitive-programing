@@ -1,5 +1,5 @@
 import sys
-input = sys.stdin.readline
+input = sys.stdin.readline().strip()
 # from collections import Counter
 
 n= int(input())

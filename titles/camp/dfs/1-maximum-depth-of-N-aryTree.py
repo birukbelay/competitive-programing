@@ -13,8 +13,7 @@ class Solution:
     def dfs(self, root: 'Node', length) -> int:
         
         # print(length)
-        if root==None:
-            # print(root)
+        if root==None:            
             # self.depth= max(pathLen, self.depth)
             return
         pathLen= length+1
