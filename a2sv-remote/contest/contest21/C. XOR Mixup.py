@@ -6,7 +6,7 @@ input = sys.stdin.readline
 n= int(input())
 for i in range(n):
     j= int(input())
-    arr = [int(a) for a in input().split()]
+    arr = [int(a) for a in input().split() ]
     
     for i in range(j):
         num=0
