@@ -40,7 +40,7 @@ pet
 
 
 # gettins only the keys as array
->>> keys = a_dict.keys()
+>>> keys = d.keys()
 >>> keys= dict_keys(['color', 'fruit', 'pet'])
 
 >>> for value in a_dict.values():
@@ -58,9 +58,11 @@ dog
 ```python
 
 d = {2:3, 1:89, 4:5, 3:0}
+# get list of sorted dictnary values as tuples
 a=sorted(d.items())
 print(a)
 >> [(1, 89), (2, 3), (3, 0), (4, 5)] #this is a list
+# convert it back to dictionary
 sd=dict(sorted(d.items()))
 print(sd)
 >> {1: 89, 2: 3, 3: 0, 4: 5} #this is a dictrionary
