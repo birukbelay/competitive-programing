@@ -18,16 +18,16 @@ a_dict.pop(color, None)
   
 ```python
 
-a_dict = {'color': 'blue', 'fruit': 'apple', 'pet': 'dog'}
+d = {'color': 'blue', 'fruit': 'apple', 'pet': 'dog'}
 
 # prints keys of the dictionary
->>> for key in a_dict:
+>>> for key in d:
 ...     print(key)
 ...
 color
 fruit
 pet
->>> for item in a_dict.items():
+>>> for item in d.items():
      print(item)
 # ...returns 
 ('color', 'blue')
@@ -35,15 +35,16 @@ pet
 ('pet', 'dog')
 
 # getting key value pairs
->>> for key, value in a_dict.items():
+>>> for key, value in d.items():
 ...     print(key, '->', value)
 
 
 # gettins only the keys as array
 >>> keys = d.keys()
->>> keys= dict_keys(['color', 'fruit', 'pet'])
+print(keys) # this outputs dict_keys object
+# dict_keys(['color', 'fruit', 'pet'])
 
->>> for value in a_dict.values():
+>>> for value in d.values():
 ...     print(value)
 # ...printing values
 blue
