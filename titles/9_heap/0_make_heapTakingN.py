@@ -17,7 +17,7 @@ class ArrHeap:
         return (index-1)//2  #this is because the index starts from one
     
     def correctUpwards(self,arr, index):
-        print(f'correctingUP--{index}|||')
+        # print(f'correctingUP--{index}|||')
         found=False        
         while not found:
             parentIndex=self.getParentIndex(index)
@@ -29,7 +29,7 @@ class ArrHeap:
                 index=parentIndex
                 # print("arrAfter=", self.heapArray)
             else:
-                print("-->found, ending loop")
+                # print("-->found, ending loop")
                 found=True
     def insert(self,arr, val):
         print("->", val)
@@ -45,7 +45,7 @@ class ArrHeap:
     def remove(self,arr, index):
         # print(f'removing i={index}, val={self.heapArray[index]}')
         # print("array=", self.heapArray)
-        self.swap(arr, index, len(self.heapArray)-1)        
+        self.swap(arr, index, len(arr)-1)        
         arr.pop()
         # print("arrayAfterRemoval=", arr)
         self.heapify(arr, index)
@@ -53,25 +53,22 @@ class ArrHeap:
     def update(self, arr, index, value):
         arr[index]=value
         self.heapify(arr, index)
+    
     def buildHeap(self,arr,n):
-        print("arrBef=",arr)
+        # print("arrBef=",arr)
         for i in range(n):
             self.heapify(arr, n, i)
             self.correctUpwards(arr, i)
-        print("newHeap=|", arr)
-        print("=|", )
-        print("=|", )
-        print("=|", )
-        print("=|", )
+
     def heapify(self, arr,n, index):
-        print("heapifying***")
+        # print("heapifying***")
         self.correctUpwards(arr, index)
         self.correctDownWard(arr, index)
-        print("``````````heapified@",index , "-->", arr)
+        # print("``````````heapified@",index , "-->", arr)
     def swap(self, arr, index1, index2):
-        print(f"bfrS-- i1={index1}, i2={index2}, arr={arr}")
+        # print(f"bfrS-- i1={index1}, i2={index2}, arr={arr}")
         arr[index1], arr[index2]= arr[index2], arr[index1]
-        print(f'swap==> arr={arr}, i1={index1}, i2={index2}')       
+        # print(f'swap==> arr={arr}, i1={index1}, i2={index2}')       
       
     def HeapSort(self, arr, n):
         # print("arrToBeSOrted=", arr)             
@@ -91,7 +88,7 @@ class ArrHeap:
             self.swap(arr[:j], 0, (len(arr)-i)-1)            
             self.heapify(arr[:j], len(arr)-i, 0)
         # print("sortedArr=", arr)
-            
+    #x        
     def getSmallerChildIndex(self, arr, index):
         if self.bothHaveValidIndex(arr, index):
             if arr[self.getRightChildIndex(index)]< arr[ self.getLeftChildIndex(index)]:
@@ -100,10 +97,10 @@ class ArrHeap:
                 return self.getLeftChildIndex(index)
         else:
             raise Exception("both don't have children")
-    
+    #x
     def correctDownWard(self,arr,  index):
         
-        print(f'correctingDown--{index}|||')
+        # print(f'correctingDown--{index}|||')
         
         
         while self.haveValidChildren(arr, index) and arr[self.whichIsValidIndex(arr, index)] < arr[index]:
@@ -113,10 +110,10 @@ class ArrHeap:
             
             # print("ha",self.heapArray)
             index= cIndexToBeSwapped
-        
+    #x    
     def haveValidChildren(self,arr, index):
         return self.isValidIndex(arr, self.getLeftChildIndex(index)) or self.isValidIndex(arr, self.getRightChildIndex(index))
-    
+    #x
     def whichIsValidIndex(self,arr, index):
         if self.bothHaveValidIndex(arr, index):
             return self.getSmallerChildIndex(arr, index)
@@ -124,7 +121,7 @@ class ArrHeap:
             return self.getLeftChildIndex(index)        
         else:
             return index
-    
+    #x
     def bothHaveValidIndex(self, arr, index):
         return self.isValidIndex(arr, self.getLeftChildIndex(index)) and self.isValidIndex(arr, self.getRightChildIndex(index))
            

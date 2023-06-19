@@ -5,7 +5,7 @@
 
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
-        allComb=[]
+        allComb = []
     
         def backtrack(start, comb):
             if len(comb)==k:

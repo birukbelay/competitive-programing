@@ -18,11 +18,11 @@ class Solution:
         tupleArr=[]
         for key, value in dicn.items():
             heapq.heappush(tupleArr, (value, key))
-        print(tupleArr)
+        # print(tupleArr)
         for i in range(len(tupleArr)-k):
             heapq.heappop(tupleArr)
         for i,j in tupleArr:
-            print(i, j)
+            # print(i, j)
             arr.append(j)
         return arr
             

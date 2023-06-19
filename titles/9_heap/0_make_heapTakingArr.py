@@ -9,16 +9,12 @@ class ArrHeap:
         for i in range(n):
             self.heapify(arr, n, i)
             self.correctUpwards(arr, i)
-        print("newHeap=|", arr)
-        print("=|", )
-        print("=|", )
-        print("=|", )
-        print("=|", )
+
     def heapify(self, arr,n, index):
-        print("heapifying***")
+        # print("heapifying***")
         self.correctUpwards(arr, index)
         self.correctDownWard(arr, index)
-        print("``````````heapified@",index , "-->", arr)
+        
      
       
     def HeapSort(self, arr, n):
@@ -26,14 +22,12 @@ class ArrHeap:
         self.buildHeap(arr,n)
         
         # print(f"arry bfr swap+++++++++",arr)
-        self.swap(arr, 0, (len(arr)-1))
+        self.swap(arr, 0, len(arr)-1)
         # print(f"arry bfr hepfy+++++++++",arr)
         self.heapify(arr[:-1], len(arr)-1, 0)
         # print(f"after hepfy+++++++++",arr)
         for i in range(1,n):
-            print("l=|")
-            print("l=|")
-            
+
             j= -1*i
             # swap the (array, 0th element, arr.length-1-i)
             self.swap(arr[:j], 0, (len(arr)-i)-1)            
@@ -90,9 +84,9 @@ class ArrHeap:
     
     
     def swap(self, arr, index1, index2):
-        print(f"bfrS-- i1={index1}, i2={index2}, arr={arr}")
+        # print(f"bfrS-- i1={index1}, i2={index2}, arr={arr}")
         arr[index1], arr[index2]= arr[index2], arr[index1]
-        print(f'swap==> arr={arr}, i1={index1}, i2={index2}')          
+        # print(f'swap==> arr={arr}, i1={index1}, i2={index2}')          
     def getSmallerChildIndex(self, arr, index):
         if self.bothHaveValidIndex(arr, index):
             if arr[self.getRightChildIndex(index)]< arr[ self.getLeftChildIndex(index)]:
@@ -104,7 +98,7 @@ class ArrHeap:
     
     def correctDownWard(self,arr,  index):
         # print("going down")
-        print(f'correctingDown--{index}|||')
+        # print(f'correctingDown--{index}|||')
         # print(f'haveValidChildIndex={self.haveValidChildren(index)}, whichIsValid={self.whichIsValidIndex(index)} ')
         # print(f'vci={self.heapArray[self.whichIsValidIndex(index)]}, va={self.heapArray[index]} ')
         

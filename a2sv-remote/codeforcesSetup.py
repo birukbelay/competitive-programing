@@ -1,5 +1,5 @@
 import sys
-input = sys.stdin.readline().strip()
+input = sys.stdin.readline
 # from collections import Counter
 
 n= int(input())
@@ -21,3 +21,13 @@ A = input().split()                     # returns an array of strings
 A = [int(i) for i in input().split()]   # returns an array of integers
 C,D = [int(i) for i in input().split()] # returns two integer variables C & D 
 [ print(a, end=" ") for a in newArr]    # prints an array
+
+
+
+# graph
+n, m = [int(a) for a in input().split()]
+d = defaultdict(list)
+for i in range(m):
+    a, b = [int(a) for a in input().split()]
+    d[a].append(b)
+    d[b].append(a)
