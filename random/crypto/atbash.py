@@ -4,7 +4,7 @@ def atbash(str):
     d={}
     key=25    
     for i in range(25):              
-        d[chr(i+65)]=chr(key+65)
+        d[chr(i+(ord('a')))]=chr(key+65)
         key-=1    
     print(d)
     newStr=''    

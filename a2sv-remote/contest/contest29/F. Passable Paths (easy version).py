@@ -27,6 +27,7 @@ def dfs(key, idx, query, seen):
     for i in arr:
         ret = dfs(i, idx, query, seen)
         ans = ans or ret
+    0000000000000000
     return ans
 
 for _ in range(q):
