@@ -1,0 +1,56 @@
+# https://leetcode.com/problems/accounts-merge/
+class Solution:
+    def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
+        self.root={}
+        self.size= defaultdict(int)
+        self.names={}
+        
+        
+        nameList= []
+        for i in range(len(accounts)):
+            arr = accounts[i]
+            
+            for j in range(1,len(arr)):
+                self.names[arr[j]]= arr[0]
+                self.union(arr[j], arr[-1])
+            # to make sure the correct relation is not missed go over it again
+            for j in range(1,len(arr)):                
+                self.union(arr[j], arr[-1])
+        # print("root--",self.root)
+        ansD = defaultdict(set)
+        
+        for key, val in self.root.items():
+            par = self.find(key)
+            ansD[par].add(key)
+        # print(ansD)
+        ansArr =[]
+        for key, val in ansD.items():
+            new =[]
+            new.append(self.names[key])
+            name = sorted(list(val))
+            for itms in name:
+                new.append(itms)
+            ansArr.append(new)
+        return ansArr
+            
+
+    def find(self, node):
+        if node not in self.root:
+            self.root[node] = node
+            return node
+        if node ==self.root[node]:
+            return node
+        self.root[node] = self.find(self.root[node])
+        return self.root[node]
+    def union(self, x, y):        
+
+        rootX = self.find(x)
+        rootY = self.find(y)
+
+        if rootX != rootY:
+            if self.size[rootX] > self.size[rootY]:
+                self.root[rootY] = rootX
+                self.size[rootX] += self.size[rootY]
+            else:
+                self.root[rootX] = rootY
+                self.size[rootY] += self.size[rootX]

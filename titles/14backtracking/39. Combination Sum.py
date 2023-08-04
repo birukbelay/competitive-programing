@@ -1,15 +1,14 @@
 # https://leetcode.com/problems/combination-sum/
+# Returning list of unique combinations, each no can be used unlimited times
 from typing  import List
 
 # class Solution:
 def combinationSum1(candidates: List[int], target: int) -> List[List[int]]:
-    
-
     result =[]
     cur =[]
     def soln(i):
         if sum(cur)==target:
-            result.append(cur.copy())
+            result.append(cur[:])
             return
         if i>= len(candidates) or sum(cur)> target:               
             return      

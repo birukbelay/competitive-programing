@@ -76,4 +76,11 @@ a=dict(sorted(d.items(), key=lambda item: item[1]))
 # Reversed
  a=dict(sorted(d.items(), key=lambda item: item[1], reverse=True))
 ```
- 
+ > sort by a lambda function
+```py
+from collections import OrderedDict
+
+
+ sorted_mydict = OrderedDict(sorted(mydict.items(), key=lambda item: item[0]))
+
+ ```

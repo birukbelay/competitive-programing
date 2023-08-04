@@ -12,6 +12,8 @@ for i in range(n):
     s=[a for a in input().strip()] # for strings with no spaces
     s = input().strip()
 
+ord(a) #97
+chr(97) #a
 
 N = input()                             # returns a string
 N = int(input())                        # returns a single integer
