@@ -6,31 +6,37 @@ class Solution:
         self.names={}
         
         
-        nameList= []
+      
+        # union to merge all accounts
         for i in range(len(accounts)):
             arr = accounts[i]
             
             for j in range(1,len(arr)):
+                # save the name for each email adress
                 self.names[arr[j]]= arr[0]
                 self.union(arr[j], arr[-1])
             # to make sure the correct relation is not missed go over it again
             for j in range(1,len(arr)):                
                 self.union(arr[j], arr[-1])
         # print("root--",self.root)
-        ansD = defaultdict(set)
+        
+        
+        cldList = defaultdict(set)
         
         for key, val in self.root.items():
             par = self.find(key)
-            ansD[par].add(key)
+            cldList[par].add(key)
         # print(ansD)
         ansArr =[]
-        for key, val in ansD.items():
-            new =[]
-            new.append(self.names[key])
+        for key, val in cldList.items():
+            usersEmails =[]
+            # first add the name to the lists
+            usersEmails.append(self.names[key])
+            # add the rest of the emails to the users email arra
             name = sorted(list(val))
             for itms in name:
-                new.append(itms)
-            ansArr.append(new)
+                usersEmails.append(itms)
+            ansArr.append(usersEmails)
         return ansArr
             
 
